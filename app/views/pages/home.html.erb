@@ -1,2 +1,21 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1567361808960-dec9cb578182?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=771&q=80);">
+  <div class="container">
+    <h1>The tools you need at your <strong>fingertips</strong> with <strong>Toolshed</strong>.</h1>
+    <p>Everything's here to get the job done.</p>
+
+    <!-- form needs to be edited once we have controllers -->
+
+    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i> Search
+    </button>
+    </div>
+    <% end %>
+
+    <!-- add category cards view grid, eg 6 categories. -->
+
+    <!-- add index cards view grid, eg first 20 of all listings avail. -->
+  </div>
+</div>
