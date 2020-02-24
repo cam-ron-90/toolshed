@@ -12,6 +12,8 @@
   <body>
     <%= render "shared/navbar_search" %>
     <%= yield %>
+
+    <%= render 'shared/flashes' %>
     <%= javascript_include_tag 'application' %>
 
     <%= javascript_pack_tag 'application' %>
