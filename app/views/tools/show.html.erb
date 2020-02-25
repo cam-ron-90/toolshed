@@ -1,20 +1,21 @@
 <div class="showpage p-4">
 
   <div>
-    <h1 class="tool_name"><%= @tool.name %></h1>
+    <h1 class="tool_namer"><%= @tool.name %></h1>
   </div>
-  <div class="image_container">
+  <div class="image_box">
     <%= image_tag @tool.photo %>
+    <h3 class="tool_cost">$<%= @tool.price %></h3>
   </div>
   <br>
   <div class="user_profile p-2">
-    <h3><%= link_to 'Bobby' %></h3>
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <h3><%= link_to @tool.user.first_name %></h3>
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
   </div>
   <br>
-  <div class="tool_description">
-    <p class="tool_description_paragraph"><%= @tool.description %></p>
-    <p class="tool_location">Location: <%= link_to @tool.location %></p>
+  <div class="tool_desc">
+    <p class="tool_desc_pg"><%= @tool.description %></p>
+    <p class="tool_loca">Location: <%= link_to @tool.location %></p>
   </div>
 
 </div>

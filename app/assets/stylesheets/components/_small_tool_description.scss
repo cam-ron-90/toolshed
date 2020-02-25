@@ -1,4 +1,11 @@
-.tool_description {
+.image_box {
+  position: relative;
+  display: flex;
+  width: 700px;
+  height: 500px;
+}
+
+.tool_desc {
   width: 700px;
   background-color: white;
   display: flex;
@@ -9,12 +16,24 @@
   position: relative;
 }
 
-.tool_description_paragraph {
+.tool_desc_pg {
   padding: 16px;
 
 }
-.tool_location {
+.tool_loca {
   position: absolute;
   left: 16px;
   bottom: 0;
+}
+
+.tool_cost {
+  position: absolute;
+  color: white;
+  bottom: 0;
+  right: 0;
+  padding: 16px;
+  margin: 16px;
+  background-color: grey;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
