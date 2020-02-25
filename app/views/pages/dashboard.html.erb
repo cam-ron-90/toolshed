@@ -1,3 +1,5 @@
+<h1>My ToolBox</h1>
+
 <% my_tools = Tool.where(params[:user_id] == current_user.id)  %>
 <% my_tools.each do |tool| %>
 <%= tool.description %>
