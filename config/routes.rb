@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'welcome', to: 'pages#logged_in'
   get 'dashboard', to: 'pages#dashboard', as: :dashboard
+  get 'category/:category', to: 'tools#category', as: :category
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :tools
   resources :bookings

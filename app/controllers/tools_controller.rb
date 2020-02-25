@@ -5,6 +5,14 @@ class ToolsController < ApplicationController
     @tools = Tool.all
   end
 
+  # def search
+  #   @tools
+  # end
+
+  def category
+    @cat_tools = Tool.where(params[:category] == @category)
+  end
+
   def show
   end
 
@@ -46,6 +54,6 @@ class ToolsController < ApplicationController
   end
 
   def tool_params
-    params.require(:tool).permit(:category, :price, :description, :photo, :location)
+    params.require(:tool).permit(:category, :price, :description, :photo, :location, :name)
   end
 end
