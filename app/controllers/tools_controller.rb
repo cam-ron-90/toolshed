@@ -10,7 +10,7 @@ class ToolsController < ApplicationController
   # end
 
   def category
-    @cat_tools = Tool.where(params[:category] == @category)
+    @cat_tools = Tool.where(category: params[:category])
   end
 
   def show
