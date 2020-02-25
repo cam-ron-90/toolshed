@@ -9,7 +9,7 @@ class ToolsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @user = current_user
     @tool = Tool.new
   end
 
@@ -18,7 +18,7 @@ class ToolsController < ApplicationController
     @user = current_user
     @tool.user = @user
     if @tool.save
-      redirect_to root_path
+      redirect_to dashboard_path, notice: 'Tool successfully added to your ToolBox.'
     else
       render :new
     end

@@ -1,8 +1,8 @@
-<h1>Tools index</h1>
-<!-- <% @tools.each do |tool| %>
+<div class="tool-cards">
+<% tools = Tool.all.first(16) %>
+<% tools.each do |tool| %>
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
 <p><%= tool.description %></p>
 </div>
 <% end %>
-<p>Find me in app/views/tools/index.html.erb</p>
-  -->
+</div>
