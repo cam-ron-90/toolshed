@@ -5,3 +5,38 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+User.destroy_all if Rails.env.development?
+
+10.times do
+  user = User.new(
+    email: rand(10..9999).to_s + "@noemail.com",
+    password: 'password',
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    bio: "this is a bad ass bio about me.",
+    phone_number: "041 234 " + rand(1000..9999).to_s
+  )
+  user.save!
+end
+
+5.times do
+  users = User.all
+  users.each do |user|
+    ref = user.id
+    category = (%w[power hand automotive plumbing gardening other]).sample
+    price = rand(10000..50000)
+    description = Faker::Lorem.sentence(word_count: 4)
+    photo = Faker::LoremFlickr.image(size: "700x500", search_terms: ['tools'])
+    tool = Tool.new(
+      category: category,
+      price: price,
+      description: description,
+      photo: photo,
+      location: Faker::Address.city,
+      user_id: ref
+    )
+    tool.save!
+  end
+end
