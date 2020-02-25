@@ -5,6 +5,14 @@ class ToolsController < ApplicationController
     @tools = Tool.all
   end
 
+  # def search
+  #   @tools
+  # end
+
+  def category
+    @cat_tools = Tool.where(params[:category] == @category)
+  end
+
   def show
   end
 

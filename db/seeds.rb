@@ -7,7 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+Tool.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
+
 
 10.times do
   user = User.new(
@@ -41,3 +43,4 @@ end
     tool.save!
   end
 end
+
