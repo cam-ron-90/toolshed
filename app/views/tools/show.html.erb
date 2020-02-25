@@ -1,2 +1,21 @@
-<h1>Tools#show</h1>
-<p>Find me in app/views/tools/show.html.erb</p>
+<div class="showpage p-4">
+
+  <div>
+    <h1 class="tool_name"><%= @tool.name %></h1>
+  </div>
+  <div class="image_container">
+    <%= image_tag @tool.photo %>
+  </div>
+  <br>
+  <div class="user_profile p-2">
+    <h3><%= link_to 'Bobby' %></h3>
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+  </div>
+  <br>
+  <div class="tool_description">
+    <p class="tool_description_paragraph"><%= @tool.description %></p>
+    <p class="tool_location">Location: <%= link_to @tool.location %></p>
+  </div>
+
+</div>
+
