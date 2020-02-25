@@ -4,11 +4,11 @@
 <h2><%= greeting %></h2>
     <br>
     <div class="container">
-    <!-- add category cards view grid, eg 6 categories. -->
+    <!-- category cards 6 categories. -->
     <h5>Browse Tools</h5>
     <%= render "shared/card_grid" %>
-    <!-- add index cards view grid, eg first 20 of all listings avail. -->
     </div>
 
 <h2>All Tool listings</h2>
+<!-- make this show only first 20, or if we get time ajax continuous load as you scroll -->
 <%= render 'shared/tools' %>

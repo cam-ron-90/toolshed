@@ -1,6 +1,37 @@
 <h1>My ToolBox</h1>
 
-<% my_tools = Tool.where(params[:user_id] == current_user.id)  %>
-<% my_tools.each do |tool| %>
-<%= tool.description %>
-<% end %>
+<%= "If this is being displayed, you have no tools listed." if current_user.tools.empty? %>
+
+<div class="container">
+<div class="tool-cards">
+  <% my_tools = current_user.tools  %>
+  <% my_tools.each do |tool| %>
+  <div class="my-tools">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="my-tools-infos">
+    <h2><%= tool.name %></h2>
+    <p>Short version of product description, truncated...</p>
+  </div>
+  </div>
+  <% end %>
+  </div>
+</div>
+
+<h1>My Bookings</h1>
+
+<%= "If this is being displayed, you have no bookings." if current_user.bookings.empty? %>
+
+<div class="container">
+<div class="tool-cards">
+  <% my_bookings = current_user.bookings  %>
+  <% my_bookings.each do |tool| %>
+  <div class="my-tools">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="my-tools-infos">
+    <h2><%= booking.tool.user %></h2>
+    <p><%= booking.start_date %> - <%= booking.end_date %> </p>
+  </div>
+  </div>
+  <% end %>
+  </div>
+</div>
