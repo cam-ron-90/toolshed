@@ -42,7 +42,7 @@ class ToolsController < ApplicationController
   private
 
   def set_tool
-    @cocktail = Tool.find(params[:id])
+    @tool = Tool.find(params[:id])
   end
 
   def tool_params
