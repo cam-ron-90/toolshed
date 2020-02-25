@@ -4,4 +4,7 @@ class PagesController < ApplicationController
 
   def logged_in
   end
+
+  def dashboard
+  end
 end
