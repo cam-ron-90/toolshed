@@ -4,6 +4,7 @@ class Tool < ApplicationRecord
   has_many :bookings
 
   validates :category, inclusion: { in: CATEGORY }
+  validates :name, presence: true
   validates :price, presence: true
   validates :description, presence: true
   validates :photo, presence: true
