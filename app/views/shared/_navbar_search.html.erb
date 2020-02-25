@@ -20,7 +20,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Add rental", "#", class: "nav-link" %>
+        <%= link_to "List a Tool", "#", class: "nav-link" %>
       </li>
       <li class="nav-item">
         <%= link_to "My ToolBox", "#", class: "nav-link" %>
@@ -28,12 +28,10 @@
       <li class="nav-item dropdown">
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Messages", "#", class: "dropdown-item" %>
-          <% if user_signed_in %>
-          <%= link_to "Log out", "#", class: "nav-link" %>
-          <% else %>
-          <%= link_to "Sign In", "#", class: "nav-link" %>
-          <% end %>
+          <%= link_to "Messages", "#", class: "dropdown-item" if user_signed_in? %>
+          <%= link_to "Register", new_user_registration_path, class: "nav-link" unless user_signed_in? %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" if user_signed_in? %>
+          <%= link_to "Sign In", user_session_path, class: "nav-link" unless user_signed_in? %>
         </div>
       </li>
     </ul>
