@@ -1,0 +1,20 @@
+.tool_description {
+  width: 700px;
+  background-color: white;
+  display: flex;
+  align-content: space-between;
+  height: 300px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.tool_description_paragraph {
+  padding: 16px;
+
+}
+.tool_location {
+  position: absolute;
+  left: 16px;
+  bottom: 0;
+}

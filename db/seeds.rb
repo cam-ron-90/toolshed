@@ -30,6 +30,7 @@ end
     description = Faker::Lorem.sentence(word_count: 4)
     photo = Faker::LoremFlickr.image(size: "700x500", search_terms: ['tools'])
     tool = Tool.new(
+      name: Faker::Appliance.equipment,
       category: category,
       price: price,
       description: description,
