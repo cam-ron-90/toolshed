@@ -3,22 +3,32 @@
   <div>
     <h1 class="tool_namer"><%= @tool.name %></h1>
   </div>
-  <div class="image_box">
-    <%= image_tag @tool.photo %>
-    <h3 class="tool_cost">$<%= @tool.price %></h3>
+  <div class="top_show_grid">
+    <div class="image_box">
+      <%= image_tag @tool.photo %>
+      <h3 class="tool_cost">$<%= @tool.price %></h3>
+    </div>
+    <div class="map_box">
+      <%= image_tag 'draft toolshed map' %>
+    </div>
   </div>
   <br>
-  <div>
-    <%= render 'shared/booking_form' if user_signed_in? %></div>
-  <div class="user_profile p-2">
-    <h3><%= link_to @tool.user.first_name %></h3>
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-  </div>
+    <div class="user_profile p-2">
+      <h3><%= link_to @tool.user.first_name %></h3>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    </div>
   <br>
-  <div class="tool_desc">
-    <p class="tool_desc_pg"><%= @tool.description %></p>
-    <p class="tool_loca">Location: <%= link_to @tool.location %></p>
-  </div>
+  <div class="show-grid">
+    <div class="tool_desc">
+      <p class="tool_desc_pg"><%= @tool.description %></p>
+      <p class="tool_loca">Location: <%= link_to @tool.location %></p>
+    </div>
 
+    <div class="show-grid-form">
+      <%= render 'shared/booking_form' if user_signed_in? %>
+
+      </div>
+
+  </div>
 </div>
 
