@@ -7,11 +7,12 @@
   <% my_tools = current_user.tools  %>
   <% my_tools.each do |tool| %>
   <div class="my-tools">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <img src=<%= tool.photo %>/>
   <div class="my-tools-infos">
     <h2><%= tool.name %></h2>
     <p>"A short description rendered here"</p>
-    <h2><%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_tool_path(tool) %>
+    <h2><%= link_to '<i class="fas fa-ellipsis-h"></i>'.html_safe, tool_path(tool) %>
+      <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_tool_path(tool) %>
       <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, tool_path(tool), method: :delete%></h2>
   </div>
   </div>
@@ -28,11 +29,12 @@
   <% my_bookings = current_user.bookings  %>
   <% my_bookings.each do |booking| %>
   <div class="my-tools">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <img src=<%= booking.tool.photo %> />
   <div class="my-tools-infos">
     <h2><%= booking.tool.name %></h2>
     <h2><%= booking.tool.user.first_name %></h2>
     <p><%= booking.start_date %> - <%= booking.end_date %> </p>
+    <h2><%= link_to '<i class="fas fa-ellipsis-h"></i>'.html_safe, booking_path(booking) %></h2>
   </div>
   </div>
   <% end %>
