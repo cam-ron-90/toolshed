@@ -9,4 +9,5 @@ class Tool < ApplicationRecord
   validates :description, presence: true
   validates :photo, presence: true
   validates :location, presence: true
+  #some code change
 end
