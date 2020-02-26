@@ -23,7 +23,7 @@ demo_user.save!
 
 10.times do
   ref = demo_user.id
-  category = (%w[power hand automotive plumbing gardening other]).sample
+  category = (['Power Tools', 'Hand Tools', 'Automotive Tools', 'Plumbing Tools', 'Gardening Tools', 'Other Tools']).sample
   price = rand(10000..50000)
   description = Faker::Lorem.sentence(word_count: 4)
   photo = Faker::LoremFlickr.image(size: "700x500", search_terms: ['tools'])
@@ -56,7 +56,7 @@ end
   users = User.all
   users.each do |user|
     ref = user.id
-    category = (%w[power hand automotive plumbing gardening other]).sample
+    category = (['Power Tools', 'Hand Tools', 'Automotive Tools', 'Plumbing Tools', 'Gardening Tools', 'Other Tools']).sample
     price = rand(10000..50000)
     description = Faker::Lorem.sentence(word_count: 4)
     photo = Faker::LoremFlickr.image(size: "700x500", search_terms: ['tools'])
