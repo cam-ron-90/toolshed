@@ -2,11 +2,11 @@
 <div class="form">
   <h3>Add Tool</h3>
     <%= simple_form_for [@tool] do |f| %>
-    <%= f.input :category, collection: %w[power hand automotive plumbing gardening other] %>
+    <%= f.input :category, collection: ['Power Tools', 'Hand Tools', 'Automotive Tools', 'Plumbing Tools', 'Gardening Tools', 'Other Tools'] %>
     <%= f.input :name %>
     <%= f.input :price %>
     <%= f.input :description %>
-    <%= f.input :photo, as: :file%>
+    <%= f.input :photo, as: :file %>
     <%= f.input :location %>
     <div class="btn btn-flat"><%= f.button :submit, 'Add Tool' %></div>
     <% end %>

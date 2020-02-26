@@ -1,5 +1,5 @@
 class Tool < ApplicationRecord
-  CATEGORY = %w[power hand automotive plumbing gardening other]
+  CATEGORY = ['Power Tools', 'Hand Tools', 'Automotive Tools', 'Plumbing Tools', 'Gardening Tools', 'Other Tools']
   belongs_to :user
   has_many :bookings
 
@@ -9,4 +9,5 @@ class Tool < ApplicationRecord
   validates :description, presence: true
   validates :photo, presence: true
   validates :location, presence: true
+  #some code change
 end

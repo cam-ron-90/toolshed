@@ -1,12 +1,16 @@
 
 
 <div class="booking_form">
+
   <%= simple_form_for :booking_info, url: new_tool_booking_path(tool), method: 'get' do |f| %>
-    <%= f.input :start_date, as: :date, html5: true %>
-    <%= f.input :end_date, as: :date, html5: true  %>
-      <div class="price_total">
-        <%= 'Price Total' %>
-      </div>
+    <div class="form-inline">
+      <%= f.input :start_date, as: :date, html5: true %>
+      <%= f.input :end_date, as: :date, html5: true  %>
+    </div>
+    <br>
+    <div class="price_total">
+      Price Total: $<%= @tool.price %>
+    </div>
     <%= f.button :submit, 'Make Booking' %>
   <% end %>
-s
+</div>

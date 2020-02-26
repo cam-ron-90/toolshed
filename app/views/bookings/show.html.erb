@@ -1,2 +1,5 @@
 <h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+
+<p>Hey, <%= @booking.user.first_name %>.
+  You're borrowing a <%= @booking.tool.name %> from <%= @booking.tool.user.first_name %>.</p>
+  <p>Your booking is from <%= @booking.start_date %> until <%= @booking.start_date %>.</p>
