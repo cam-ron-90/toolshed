@@ -2,8 +2,21 @@ class ToolsController < ApplicationController
   before_action :set_tool, only: [:edit, :update, :show, :destroy]
 
   def index
-    @tools = Tool.all
+    # raise
+    if params[:category]
+      @tools = Tool.where(category: params[:category])
+    elsif params[:search][:query]
+      sql_query = "name ILIKE :query OR description ILIKE :query OR category ILIKE :query"
+      @tools = Tool.where(sql_query, query: "%#{params[:search][:query]}%")
+    else
+      @tools = Tool.all
+    end
+
   end
+
+  # def power_tools
+  #   @tools = Tool.all
+  # end
 
   # def search
   #   @tools
