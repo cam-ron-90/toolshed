@@ -9,7 +9,7 @@
   </div>
   <br>
   <div>
-    <%= link_to "book tool", new_tool_booking_path(@tool) %>
+    <%#= link_to "book tool", new_tool_booking_path(@tool) %>
   <%= render partial: 'shared/booking_form', locals: { tool: @tool } %></div>
   <div class="user_profile p-2">
     <h3><%= link_to @tool.user.first_name %></h3>
