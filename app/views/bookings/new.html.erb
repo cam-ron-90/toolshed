@@ -1,2 +1,26 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<!-- <p>Find me in app/views/bookings/new.html.erb</p> -->
+<div class="container">
+  <br>
+  <h1>Confirmation</h1>
+  <div class="confirm_grid">
+    <div>
+      <div class="image_box">
+        <%= image_tag @tool.photo %>
+        <!-- <h3 class="tool_cost">$<%= @tool.price %></h3> -->
+      </div>
+    </div>
+    <div class="booking_form">
+      <div>
+        <h2 class="tool_namer"><%= @tool.name %></h2>
+      </div>
+      <%= simple_form_for [@tool, @booking] do |f| %>
+        <%= f.input :start_date, as: :date, html5: true, input_html: {value: "#{@start_date}"} %>
+        <%= f.input :end_date, as: :date, html5: true, input_html: {value: "#{@end_date}"}  %>
+          <div class="price_total">
+            <%= 'Price Total' %>
+          </div>
+        <%= f.button :submit, 'Confirm Booking' %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -13,6 +13,8 @@
     </div>
   </div>
   <br>
+
+
     <div class="user_profile p-2">
       <h3><%= link_to @tool.user.first_name %></h3>
         <%= cl_image_tag "https://res.cloudinary.com/dsp3264/image/upload/v1582695374/user_nuk9hx.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -25,9 +27,9 @@
     </div>
 
     <div class="show-grid-form">
-      <%= render 'shared/booking_form' if user_signed_in? %>
+      <%= render partial: 'shared/booking_form', locals: { tool: @tool } %>
 
-      </div>
+    </div>
 
   </div>
 </div>

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'category/:category', to: 'tools#category', as: :category
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :tools do
-    resources :bookings, only: :create
+    resources :bookings, only: [:new, :create]
   end
 
   resources :bookings
