@@ -26,11 +26,12 @@
 <div class="container">
 <div class="tool-cards">
   <% my_bookings = current_user.bookings  %>
-  <% my_bookings.each do |tool| %>
+  <% my_bookings.each do |booking| %>
   <div class="my-tools">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
   <div class="my-tools-infos">
-    <h2><%= booking.tool.user %></h2>
+    <h2><%= booking.tool.name %></h2>
+    <h2><%= booking.tool.user.first_name %></h2>
     <p><%= booking.start_date %> - <%= booking.end_date %> </p>
   </div>
   </div>
