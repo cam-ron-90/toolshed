@@ -1,13 +1,14 @@
-<h1>Add Tool</h1>
-
-    <div class="container">
-      <%= simple_form_for [@tool] do |f| %>
-        <%= f.input :category, collection: %w[power hand automotive plumbing gardening other] %>
-        <%= f.input :name %>
-        <%= f.input :price %>
-        <%= f.input :description %>
-        <%= f.input :photo %>
-        <%= f.input :location %>
-        <%= f.button :submit, 'Add Tool' %>
-      <% end %>
-    </div>
+<div class="container">
+<div class="form">
+  <h3>Add Tool</h3>
+    <%= simple_form_for [@tool] do |f| %>
+    <%= f.input :category, collection: %w[power hand automotive plumbing gardening other] %>
+    <%= f.input :name %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.input :photo %>
+    <%= f.input :location %>
+    <div class="btn btn-flat"><%= f.button :submit, 'Add Tool' %></div>
+    <% end %>
+</div>
+</div>

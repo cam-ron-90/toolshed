@@ -1,2 +1,18 @@
-<h1>Tools#edit</h1>
-<p>Find me in app/views/tools/edit.html.erb</p>
+<div class="container">
+<% if @tool[:user_id] != current_user.id %>
+<%= "Sorry, this isn't your tool to edit." %>
+<% else %>
+  <div class="form">
+    <h3>Edit Your Tool</h3>
+    <%= simple_form_for @tool do |f| %>
+      <%= f.input :category, collection: %w[power hand automotive plumbing gardening other] %>
+      <%= f.input :name %>
+      <%= f.input :price %>
+      <%= f.input :description %>
+      <%= f.input :photo %>
+      <%= f.input :location %>
+      <div class="btn btn-flat"><%= f.button :submit, 'Update Tool' %></div>
+    <% end %>
+  </div>
+<% end %>
+</div>

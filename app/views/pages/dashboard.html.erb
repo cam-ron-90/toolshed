@@ -10,7 +10,9 @@
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
   <div class="my-tools-infos">
     <h2><%= tool.name %></h2>
-    <p>Short version of product description, truncated...</p>
+    <p>"A short description rendered here"</p>
+    <h2><%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_tool_path(tool) %>
+      <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, tool_path(tool), method: :delete%></h2>
   </div>
   </div>
   <% end %>
