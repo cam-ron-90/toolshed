@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#dashboard', as: :dashboard
   get 'category/:category', to: 'tools#category', as: :category
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :tools
+  resources :tools do
+    resources :bookings, only: :create
+  end
+
   resources :bookings
 end

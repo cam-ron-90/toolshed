@@ -14,8 +14,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.tool = Tool.find(params[:id])
+    @booking.tool = Tool.find(params[:tool_id])
     @booking.user = current_user
+    days = @booking.end_date.to_date.mjd - @booking.start_date.to_date.mjd
+    @booking.price_total = days * @booking.tool.price
     if @booking.save
       redirect_to root_path, notice: 'Booking was successfully created.'
     else

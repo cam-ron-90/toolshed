@@ -8,6 +8,8 @@
     <h3 class="tool_cost">$<%= @tool.price %></h3>
   </div>
   <br>
+  <div>
+    <%= render 'shared/booking_form' if user_signed_in? %></div>
   <div class="user_profile p-2">
     <h3><%= link_to @tool.user.first_name %></h3>
       <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
