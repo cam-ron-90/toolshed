@@ -1,6 +1,15 @@
 <h1>Tools</h1>
 
-<% @tools.each do |tool| %>
-<p><%= tool.name %></p>
+<div class="container">
+  <div class="cards">
+    <% @tools.each do |tool| %>
+
+      <%= link_to tool_path(tool) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= tool.photo %>)">
+        <p><%= tool.name %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <%#= link_to 'Add Cocktail', new_cocktail_path %>
 </div>
-<% end %>
