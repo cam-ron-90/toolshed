@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
     @bookings = Booking.all
@@ -9,6 +10,9 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @start_date = params[:booking_info][:start_date]
+    @end_date = params[:booking_info][:end_date]
+    @tool = Tool.find(params[:tool_id])
     @booking = Booking.new
   end
 

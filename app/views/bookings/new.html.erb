@@ -1,2 +1,14 @@
 <h1>Bookings#new</h1>
 <p>Find me in app/views/bookings/new.html.erb</p>
+
+
+<div class="booking_form">
+  <%= simple_form_for [@tool, @booking] do |f| %>
+    <%= f.input :start_date, as: :date, html5: true, input_html: {value: "#{@start_date}"} %>
+    <%= f.input :end_date, as: :date, html5: true, input_html: {value: "#{@end_date}"}  %>
+      <div class="price_total">
+        <%= 'Price Total' %>
+      </div>
+    <%= f.button :submit, 'Confirm Booking' %>
+  <% end %>
+s
