@@ -9,13 +9,13 @@
       <h3 class="tool_cost">$<%= @tool.price %></h3>
     </div>
     <div class="map_box">
-      <%= image_tag 'draft toolshed map' %>
+      <%= cl_image_tag "https://res.cloudinary.com/dsp3264/image/upload/v1582714793/draft_toolshed_map_upvzdt.jpg"  %>
     </div>
   </div>
   <br>
     <div class="user_profile p-2">
       <h3><%= link_to @tool.user.first_name %></h3>
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <%= cl_image_tag "https://res.cloudinary.com/dsp3264/image/upload/v1582695374/user_nuk9hx.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
     </div>
   <br>
   <div class="show-grid">
