@@ -39,7 +39,7 @@ class ToolsController < ApplicationController
   def update
     @tool.update(tool_params)
 
-    redirect_to root_path
+    redirect_to dashboard_path, notice: 'Your Tool has been updated.'
   end
 
   def destroy

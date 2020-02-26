@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     days = @booking.end_date.to_date.mjd - @booking.start_date.to_date.mjd
     @booking.price_total = days * @booking.tool.price
     if @booking.save
-      redirect_to root_path, notice: 'Booking was successfully created.'
+      redirect_to dashboard_path, notice: 'Booking was successfully created.'
     else
       render :new
     end
@@ -30,7 +30,7 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
-      redirect_to root_path, notice: 'Booking was successfully updated.'
+      redirect_to dashboard_path, notice: 'Booking was successfully updated.'
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to root_path, notice: 'Booking was successfully destroyed.'
+    redirect_to dashboard_path, notice: 'Booking was successfully destroyed.'
   end
 
   private
