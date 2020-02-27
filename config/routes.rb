@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'welcome', to: 'pages#logged_in'
   get 'dashboard', to: 'pages#dashboard', as: :dashboard
   get 'category/:category', to: 'tools#category', as: :category
+  get 'my_tool/:tool', to: 'bookings#my_tool', as: :my_tool
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :tools do
     resources :bookings, only: [:new, :create]

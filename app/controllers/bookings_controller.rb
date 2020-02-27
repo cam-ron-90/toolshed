@@ -6,6 +6,10 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
+  def my_tool
+    @my_tool = Booking.where(tool: params[:tool])
+  end
+
   def show
   end
 
