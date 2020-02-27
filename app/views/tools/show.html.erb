@@ -5,7 +5,11 @@
   </div>
   <div class="top_show_grid">
     <div class="image_box">
-      <%= image_tag @tool.photo %>
+      <% if @tool.photos.attached? %>
+        <% @tool.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, crop: :fill, height: 400, width: 400 %>
+        <% end %>
+      <% end %>
       <h3 class="tool_cost">$<%= @tool.price %></h3>
     </div>
     <div class="map_box">
