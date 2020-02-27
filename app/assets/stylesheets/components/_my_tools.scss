@@ -1,11 +1,18 @@
 
 .my-tools {
+  border-radius: 8px;
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+}
+
+.my-tools:hover {
+  opacity: 0.9;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+  border: 1px solid light-gray;
 }
 
 .my-tools img {
