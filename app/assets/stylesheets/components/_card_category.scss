@@ -13,12 +13,13 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-a {
+.card-category a {
   color: white;
   text-decoration: none;
 }
 
 .card-category:hover {
+
   text-decoration: none;
   color: gray;
 }

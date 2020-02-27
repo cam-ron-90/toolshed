@@ -5,8 +5,7 @@
   <div class="confirm_grid">
     <div>
       <div class="image_box">
-        <%= image_tag @tool.photo %>
-        <!-- <h3 class="tool_cost">$<%= @tool.price %></h3> -->
+        <%= cl_image_tag @tool.photos.first.key, crop: :fill, height: 120, width: 120 if @tool.photos.attached? %>
       </div>
     </div>
     <div class="booking_form">
