@@ -1,7 +1,7 @@
 
 const initBookingPrice = () => {
-  const startDateElement = document.getElementById("booking_start_date");
-  const endDateElement = document.getElementById("booking_end_date");
+  const startDateElement = document.getElementById("booking_info_start_date");
+  const endDateElement = document.getElementById("booking_info_end_date");
   const priceElement = document.querySelector(".price_total");
 
 
@@ -21,18 +21,14 @@ const initBookingPrice = () => {
     const toolPrice = toolPriceS.substring(1);
     const totalPrice = (toolPrice * calcDays);
     return totalPrice;
-    // coversion
-    // find the differnece in days
-    // mulitply by the tool price (get element by id)
-    // override the inner text of the class total_price
   }
 
-  document.getElementById("booking_start_date").addEventListener("change", (event) => {
+  document.getElementById("booking_info_start_date").addEventListener("change", (event) => {
     const newPrice = calculateTotal();
     updateHtmlPrice(newPrice);
   });
 
-  document.getElementById("booking_end_date").addEventListener("change", (event) => {
+  document.getElementById("booking_info_end_date").addEventListener("change", (event) => {
     const newPrice = calculateTotal();
     updateHtmlPrice(newPrice);
   });
