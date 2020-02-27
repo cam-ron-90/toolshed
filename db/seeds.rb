@@ -13,7 +13,7 @@ User.destroy_all if Rails.env.development?
 
 
 demo_user = User.new(
-    email: 'user@user.com',
+    email: 'user2@user.com',
     password: 'password',
     first_name: 'McLovin',
     last_name: 'Fly',
