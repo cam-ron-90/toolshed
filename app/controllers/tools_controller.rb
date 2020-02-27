@@ -1,5 +1,6 @@
 class ToolsController < ApplicationController
   before_action :set_tool, only: [:edit, :update, :show, :destroy]
+  skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
     # raise
@@ -49,7 +50,7 @@ class ToolsController < ApplicationController
     @user = current_user
     @tool.user = @user
     if @tool.save
-      redirect_to dashboard_path, notice: 'Tool successfully added to your ToolBox.'
+      redirect_to dashboard_path, notice: "#{@tool.name} successfully added to your ToolBox."
     else
       render :new
     end
@@ -61,13 +62,13 @@ class ToolsController < ApplicationController
   def update
     @tool.update(tool_params)
 
-    redirect_to dashboard_path, notice: 'Your Tool has been updated.'
+    redirect_to dashboard_path, notice: "#{@tool.name} has been updated."
   end
 
   def destroy
     @tool.destroy
 
-    redirect_to dashboard_path, notice: 'This toool was removed from your ToolBox.'
+    redirect_to dashboard_path, notice: "#{@tool.name} was removed from your ToolBox."
   end
 
   private
@@ -77,6 +78,6 @@ class ToolsController < ApplicationController
   end
 
   def tool_params
-    params.require(:tool).permit(:category, :price, :description, :photo, :location, :name)
+    params.require(:tool).permit(:category, :price, :description, :location, :name, photos: [])
   end
 end
