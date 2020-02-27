@@ -1,7 +1,7 @@
-.card-category {
+.card-tool {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,16 +12,14 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-a {
+.card-tool a {
   color: white;
   text-decoration: none;
 }
 
-a img {
-  border-radius: 0px;
-}
+.card-tool:hover {
 
-.card-category:hover {
   text-decoration: none;
   color: gray;
 }
+
