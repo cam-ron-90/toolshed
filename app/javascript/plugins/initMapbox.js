@@ -1,6 +1,4 @@
 import mapboxgl from 'mapbox-gl';
-import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
-
 // 1. select the map element in our HTML
 // 2. only build a map if there's a div#map to inject into
 // 3. creates a new instance of the Map object on the view
@@ -18,7 +16,7 @@ const showMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   const map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/ejohnst2/ck72hbv9t03731jl9y4v22p63'
+    style: 'mapbox://styles/mapbox/streets-v10'
   });
   return map;
 }
@@ -40,8 +38,6 @@ const initMapbox = () => {
     const map = showMap(mapElement);
     addMarkersToMap(markers, map);
     fitMapToMarkers(map, markers);
-    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-                                      mapboxgl: mapboxgl }));
   }
 };
 
