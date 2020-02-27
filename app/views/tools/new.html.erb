@@ -2,7 +2,7 @@
 <div class="form">
   <h3>Add Tool</h3>
     <%= simple_form_for [@tool] do |f| %>
-    <%= f.input :category, collection: ['Power Tools', 'Hand Tools', 'Automotive Tools', 'Plumbing Tools', 'Gardening Tools', 'Other Tools'] %>
+    <%= f.input :category, collection: ['Power Tools', 'Hand Tools', 'Landscaping', 'Automotive', 'Machinery', 'Other Tools'] %>
     <%= f.input :name %>
     <%= f.input :price %>
     <%= f.input :description %>
