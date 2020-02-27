@@ -1,5 +1,6 @@
 class ToolsController < ApplicationController
   before_action :set_tool, only: [:edit, :update, :show, :destroy]
+  skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
     # raise
@@ -28,6 +29,15 @@ class ToolsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @tools = Tool.geocoded #returns flats with coordinates
+
+    @markers = @tools.map do |tool|
+      {
+        lat: tool.latitude,
+        lng: tool.longitude,
+        # infoWindow: render_to_string(partial: "info_window", locals: { tool: tool })
+      }
+    end
   end
 
   def new
@@ -68,6 +78,6 @@ class ToolsController < ApplicationController
   end
 
   def tool_params
-    params.require(:tool).permit(:category, :price, :description, :photo, :location, :name)
+    params.require(:tool).permit(:category, :price, :description, :location, :name, photos: [])
   end
 end

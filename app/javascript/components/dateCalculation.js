@@ -1,20 +1,44 @@
-// <script type = "text/javascript" >
-    // JavaScript program to illustrate
-    // calculation of no. of days between two date
 
-    // To set two dates to two variables
-const calculateTotalPrice = () => {
+const initBookingPrice = () => {
+  const startDateElement = document.getElementById("booking_start_date");
+  const endDateElement = document.getElementById("booking_end_date");
+  const priceElement = document.querySelector(".price_total");
 
-  let startDate = new Date(`${@booking.start_date}`);
-  let endDate = new Date(`${@booking.end_date}`);
 
-  // To calculate the time difference of two dates
-  let Difference_In_Time = endDate.getTime() - startDate.getTime();
+  const updateHtmlPrice = (price) => {
+    if (isNaN(parseFloat(price))) {
+      return priceElement.innerText = `Total Price: -`;
+    } else {
+      return priceElement.innerText = `Total Price: $${price}`;
+    }
+  }
 
-  // To calculate the no. of days between two dates
-  let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+  const calculateTotal = () => {
+    const startDate = Date.parse(startDateElement.value);
+    const endDate = Date.parse(endDateElement.value);
+    const calcDays = ((endDate - startDate) / 86400000);
+    const toolPriceS = document.getElementsByClassName("tool_cost")[0].innerText;
+    const toolPrice = toolPriceS.substring(1);
+    const totalPrice = (toolPrice * calcDays);
+    return totalPrice;
+    // coversion
+    // find the differnece in days
+    // mulitply by the tool price (get element by id)
+    // override the inner text of the class total_price
+  }
 
-  let Total_Price = Difference_In_Days * `${@tool.price}`
+  document.getElementById("booking_start_date").addEventListener("change", (event) => {
+    const newPrice = calculateTotal();
+    updateHtmlPrice(newPrice);
+  });
+
+  document.getElementById("booking_end_date").addEventListener("change", (event) => {
+    const newPrice = calculateTotal();
+    updateHtmlPrice(newPrice);
+  });
 }
+
+export { initBookingPrice };
+// export { calculateTotal };
 
 

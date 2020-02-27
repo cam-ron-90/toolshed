@@ -37,3 +37,13 @@
   top: -20px;
   width: 40px;
 }
+
+.card-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.card-item a:hover {
+  text-decoration: none;
+  color: gray;
+}
