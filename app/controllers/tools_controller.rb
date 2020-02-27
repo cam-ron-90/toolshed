@@ -29,6 +29,15 @@ class ToolsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @tools = Tool.geocoded #returns flats with coordinates
+
+    @markers = @tools.map do |tool|
+      {
+        lat: tool.latitude,
+        lng: tool.longitude,
+        # infoWindow: render_to_string(partial: "info_window", locals: { tool: tool })
+      }
+    end
   end
 
   def new

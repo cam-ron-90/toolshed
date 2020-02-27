@@ -8,9 +8,10 @@
       <%= f.input :end_date, as: :date, html5: true  %>
     </div>
     <br>
-    <div class="price_total">
-      Price Total: $<%= @tool.price %>
-    </div>
+      <div class="price_total">
+        Total Price: -
+      </div>
+      <br>
     <%= f.button :submit, 'Make Booking' %>
   <% end %>
 </div>
