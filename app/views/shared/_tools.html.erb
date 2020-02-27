@@ -1,7 +1,12 @@
 <div class="tool-cards">
-<% tools = Tool.all.first(16) %>
+<% tools = Tool.all %>
 <% tools.each do |tool| %>
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <% if tool.photos.attached? %>
+      <% tool_img = cl_image_path(tool.photos.first.key, height: 180, crop: :fill) %>
+  <% else %>
+    <% tool_img = cl_image_path('tools-default_w1klht.jpg', height: 180, crop: :fill) %>
+  <% end %>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= tool_img %>)">
 <p><%= link_to tool.name, tool_path(tool) %></p>
 </div>
 <% end %>

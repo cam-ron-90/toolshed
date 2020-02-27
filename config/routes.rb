@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: 'pages#home'
+  get 'about', to: 'pages#about'
   get 'welcome', to: 'pages#logged_in'
   get 'dashboard', to: 'pages#dashboard', as: :dashboard
   get 'category/:category', to: 'tools#category', as: :category
