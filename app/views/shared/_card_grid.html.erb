@@ -1,11 +1,48 @@
 <!-- the results in grid format will need to be iteration/dynamically generated for the page
 they will appear on eg. the results page. below is only a sample if static.
 'index' will be cards view of all existing listings -->
-<% category = ['Power Tools', 'Hand Tools', 'Automotive Tools', 'Plumbing Tools', 'Gardening Tools', 'Other Tools'] %>
+
 <div class="cards">
-<%  category.each do |category_name| %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-  <p><%= link_to category_name, tools_path(category: category_name) %></p>
-  </div>
-<% end %>
+
+    <%= link_to tools_path(category: 'Power Tools',) do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url('power_tools') %>)">
+        <p> Power Tools </p>
+      </div>
+    <% end %>
+
+    <%= link_to tools_path(category: 'Hand Tools') do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url('hand_tools') %>)">
+        <p> Hand Tools </p>
+      </div>
+    <% end %>
+
+    <%= link_to tools_path(category: 'Landscaping') do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url('landscaping') %>)">
+        <p> Landscaping </p>
+      </div>
+    <% end %>
+
+    <%= link_to tools_path(category: 'Automotive') do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url('automotive') %>)">
+        <p> Automotive </p>
+      </div>
+    <% end %>
+
+    <%= link_to tools_path(category: 'Machinery') do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url('machinery') %>)">
+        <p> Machinery </p>
+      </div>
+    <% end %>
+
+    <%= link_to tools_path(category: 'Other Tools') do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url('other') %>)">
+        <p> Other Tools </p>
+      </div>
+    <% end %>
+
 </div>
+
+
+
+
+
