@@ -1,3 +1,4 @@
+
 .my-tools {
   overflow: hidden;
   height: 120px;
@@ -28,5 +29,17 @@
 }
 
 .my-tools .my-tools-infos {
-  padding: 16px;
+  padding: 10px 20px;
+  margin: 0px;
+}
+
+
+.my-tools a {
+  color: gray;
+  text-decoration: none;
+}
+
+.my-tools a:hover {
+  text-decoration: none;
+  color: black;
 }
