@@ -7,13 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 require 'faker'
-Booking.destroy_all if Rails.env.development?
-Tool.destroy_all if Rails.env.development?
-User.destroy_all if Rails.env.development?
-
+Booking.destroy_all
+Tool.destroy_all
+User.destroy_all
 
 demo_user = User.new(
-    email: 'user2@user.com',
+    email: 'user@user.com',
     password: 'password',
     first_name: 'McLovin',
     last_name: 'Fly',
