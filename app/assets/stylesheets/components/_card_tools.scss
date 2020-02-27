@@ -20,6 +20,12 @@
 .card-tool:hover {
 
   text-decoration: none;
-  color: gray;
+  font-weight: 300;
 }
 
+#card-text {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}

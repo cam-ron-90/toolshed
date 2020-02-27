@@ -1,7 +1,7 @@
 <div class="tool-cards">
   <% tools = Tool.all.first(16) %>
   <% tools.each do |tool| %>
-    <%= link_to tool_path(tool) do %>
+    <%= link_to tool_path(tool), id: "card-text" do %>
       <div class="card-tool" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(tool.photos.first.key) %>)">
         <p><%= tool.name %></p>
       </div>
