@@ -1,4 +1,3 @@
-<!-- <p>Find me in app/views/bookings/new.html.erb</p> -->
 <div class="container">
   <br>
   <h1>Confirmation</h1>
@@ -13,12 +12,12 @@
         <h2 class="tool_namer"><%= @tool.name %></h2>
       </div>
       <%= simple_form_for [@tool, @booking] do |f| %>
-        <%= f.input :start_date, as: :date, html5: true, input_html: {value: "#{@start_date}"} %>
+        <%= f.input :start_date, as: :date, html5: true, input_html: {value: "#{@start_date}"}%>
         <%= f.input :end_date, as: :date, html5: true, input_html: {value: "#{@end_date}"}  %>
           <div class="price_total">
-            <%= 'Price Total' %>
+            <p>   Total Price: $500</p>
           </div>
-        <%= f.button :submit, 'Confirm Booking' %>
+        <%= f.button :submit, 'Confirm Booking', class: 'btn btn-ghost' %>
         <%= link_to 'CANCEL', root_path, class: 'btn btn-flat'  %>
       <% end %>
     </div>
