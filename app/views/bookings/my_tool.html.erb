@@ -1,16 +1,19 @@
 <div class="showpage p-4">
-Your Bookings for this tool.
-<!-- dynamically render a tool name. -->
-<!-- if else to protect against no bookings. -->
-  <div>
-    <%= @tool.name  %>
-    <%= @tool.category  %>
-    <%= @tool.price  %>
-    <%= @tool.description  %>
-    <%= @tool.location  %>
-  </div>
+<h2>Your Bookings for this Tool: <%= @tool.name  %></h2>
+  <div class="line"></div>
 
 
+
+  <% @bookings.each do |booking| %>
+    <div>
+      <div>$<%= booking.price_total  %></div>
+      <div>Booked by: <%= booking.user.first_name %>
+      <%= booking.user.last_name %></div>
+      <div>From: <%= booking.start_date %>
+         Until: <%= booking.end_date %>
+      </div>
+    </div>
+  <% end %>
 </div>
 
 
