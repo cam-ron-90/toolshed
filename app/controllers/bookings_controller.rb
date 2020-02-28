@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @end_date = params[:booking_info][:end_date]
     @tool = Tool.find(params[:tool_id])
     @booking = Booking.new
-    @booking.save
+    # @booking.save
   end
 
   def create
