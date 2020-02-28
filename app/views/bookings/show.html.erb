@@ -3,6 +3,7 @@
       <div class="line text-center">
     <h3> Your <%= @booking.tool.name %> booking </h3>
     </div>
+    <br>
   <div class="booked-card">
 
 
@@ -13,8 +14,7 @@
     <br>
 
      <p>You're borrowing a <%= @booking.tool.name %> from <%= @booking.tool.user.first_name %>. Your booking is from <%= @booking.start_date %> until <%= @booking.start_date %>.</p>
-      <%= link_to "Dashboard", dashboard_path, class: "btn btn-flat" %>
-  </div>
+      <%= link_to "Back To Dashboard", dashboard_path, class: "btn btn-flat" %>
   </div>
 </div>
 

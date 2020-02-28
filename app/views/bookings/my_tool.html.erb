@@ -1,25 +1,34 @@
 <div class="showpage p-4">
-<h2>Your Bookings for this Tool: <%= @tool.name  %></h2>
-  <div class="line"></div>
-<br>
-  <div>
-  <%= cl_image_tag @tool.photos.first.key, crop: :fill, height: 120, width: 120 %>
-  </div>
-<div class="my-tools">
-
-  <% @bookings.each do |booking| %>
-    <div class='my-tools-infos'>
-      <div>Booked by: <%= booking.user.first_name %>
-      <%= booking.user.last_name %></div>
-      <div>$<%= booking.price_total  %>
-        - Booking Ref: <%= booking.id %>
-      </div>
-      <div>From: <%= booking.start_date %>
-         Until: <%= booking.end_date %>
-      </div>
+  <div class="container">
+    <br>
+    <div class="text-center">
+      <h3>Your Bookings for this Tool: <br/>
+        <%= @tool.name  %></h3>
     </div>
-  <% end %>
-</div>
-</div>
-
+    <div class="line"></div>
+    <br>
+    <div class="booked-card">
+      <div class="alt-card-tool">
+        <%= cl_image_tag @tool.photos.first.key, crop: :fill, height: 400, width: 400 %>
+      </div>
+      <br>
+      <div>
+        <% @bookings.each do |booking| %>
+        <br>
+          <p>Booked by: <%= booking.user.first_name %>
+            <%= booking.user.last_name %></p>
+            <p>$<%= booking.price_total  %>
+              - Booking Ref: <%= booking.id %>
+            </p>
+            <p>From: <%= booking.start_date %>
+             Until: <%= booking.end_date %></p>
+             <div class="line-60"></div>
+         <% end %>
+       </div>
+       <br>
+       <%= link_to "Back To Dashboard", dashboard_path, class: "btn btn-flat" %>
+     </div>
+     <br>
+   </div>
+ </div>
 
