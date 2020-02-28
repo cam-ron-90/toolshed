@@ -6,8 +6,10 @@ import { initMapbox } from '../plugins/initMapbox';
 // import { calculateTotal } from '../components/dateCalculation';
 
 // calculateTotal();
-initBookingPrice();
 loadDynamicBannerText();
+
+initBookingPrice();
+
 initMapbox();
 
 

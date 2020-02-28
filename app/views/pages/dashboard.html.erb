@@ -1,4 +1,8 @@
-<h1>My ToolBox</h1>
+<br>
+<div class="container">
+<div class="line"><h2>My ToolBox</h2></div>
+</div>
+<br>
 
 <%= "If this is being displayed, you have no tools listed." if current_user.tools.empty? %>
 
@@ -23,9 +27,12 @@
   <% end %>
   </div>
 </div>
-
-<h1>My Bookings</h1>
-
+<div class="container">
+<div class="line">
+  <br>
+  <h2>My Bookings</h2></div>
+<br>
+</div>
 <%= "If this is being displayed, you have no bookings." if current_user.bookings.empty? %>
 
 <div class="container">

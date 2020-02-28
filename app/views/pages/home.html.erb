@@ -1,5 +1,6 @@
 <!-- the banner is now a partial under shared -->
 <%= render 'shared/banner' %>
+<br>
 <% user_signed_in? ? (greeting = 'Welcome back, ' + current_user.first_name + '!') : (greeting = "")%>
 <h2><%= greeting %></h2>
     <br>

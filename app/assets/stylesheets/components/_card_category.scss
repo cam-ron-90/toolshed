@@ -25,3 +25,24 @@ a img {
   text-decoration: none;
   font-weight: 300;
 }
+
+.text-center {
+  text-align: center;
+}
+
+.booked-card {
+  padding-bottom: 20px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  text-align: center;
+}
+
+.booked-card p {
+  padding: 16px 16px;
+}
