@@ -19,8 +19,15 @@
         height: 500px;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        <script>geojson.features.forEach(function(marker) {
+          var el = document.createElement('div');
+          el.className = 'marker';
+          new mapboxgl.Marker(el)
+            .setLngLat(marker.geometry.coordinates)
+            .addTo(map);
+          });
+        </script>
       </div>
-
     </div>
   </div>
   <br>

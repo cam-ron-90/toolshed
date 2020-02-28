@@ -35,6 +35,7 @@ class ToolsController < ApplicationController
       {
         lat: tool.latitude,
         lng: tool.longitude,
+        image_url: helpers.asset_url('toolshed_pindrop')
         # infoWindow: render_to_string(partial: "info_window", locals: { tool: tool })
       }
     end
