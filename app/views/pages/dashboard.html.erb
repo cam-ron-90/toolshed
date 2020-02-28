@@ -17,7 +17,7 @@
     <img src="https://res.cloudinary.com/dsp3264/image/upload/v1582766145/support_xywvdk.png">
   <% end %>
   <div class="my-tools-infos">
-    <h2><%= tool.name %></h2>
+    <h2 style="text-align: left;"><%= tool.name %></h2>
     <p>"A short description rendered here"</p>
       <%= link_to '<i class="fas fa-ellipsis-h"></i>'.html_safe, my_tool_path(tool: tool)%>
       <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_tool_path(tool) %>
@@ -46,10 +46,11 @@
       <img src="https://res.cloudinary.com/dsp3264/image/upload/v1582766145/support_xywvdk.png">
     <% end %>
   <div class="my-tools-infos">
-    <h2><%= booking.tool.name %></h2>
-    <h2><%= booking.tool.user.first_name %></h2>
+    <h2 style="text-align: left;"><%= booking.tool.name %></h2>
+    <h2 style="text-align: left;"><%= booking.tool.user.first_name %></h2>
     <p><%= booking.start_date %> - <%= booking.end_date %> </p>
-    <h2><%= link_to '<i class="fas fa-ellipsis-h"></i>'.html_safe, booking_path(booking) %></h2>
+    <%= link_to '<i class="fas fa-ellipsis-h"></i>'.html_safe, booking_path(booking) %>
+    <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }%>
   </div>
   </div>
   <% end %>
