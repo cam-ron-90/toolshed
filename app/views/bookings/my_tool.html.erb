@@ -1,19 +1,25 @@
 <div class="showpage p-4">
 <h2>Your Bookings for this Tool: <%= @tool.name  %></h2>
   <div class="line"></div>
-
-
+<br>
+  <div>
+  <%= cl_image_tag @tool.photos.first.key, crop: :fill, height: 120, width: 120 %>
+  </div>
+<div class="my-tools">
 
   <% @bookings.each do |booking| %>
-    <div>
-      <div>$<%= booking.price_total  %></div>
+    <div class='my-tools-infos'>
       <div>Booked by: <%= booking.user.first_name %>
       <%= booking.user.last_name %></div>
+      <div>$<%= booking.price_total  %>
+        - Booking Ref: <%= booking.id %>
+      </div>
       <div>From: <%= booking.start_date %>
          Until: <%= booking.end_date %>
       </div>
     </div>
   <% end %>
+</div>
 </div>
 
 
