@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
 
   def my_tool
     @tool = Tool.find(params[:tool])
-    @booking = @tool.bookings
+    @bookings = @tool.bookings
   end
 
   def show
