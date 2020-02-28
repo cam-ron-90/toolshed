@@ -1,5 +1,11 @@
-<h1>Bookings#show</h1>
+<div class="container">
+  <h2> Your <%= @booking.tool.name %> booking </h2>
+  <div class="alt-card-tool">
+    <%= cl_image_tag @booking.tool.photos.first.key, height: 400, width: 400, crop: :fill %>
 
-<p>Hey, <%= @booking.user.first_name %>.
-  You're borrowing a <%= @booking.tool.name %> from <%= @booking.tool.user.first_name %>.</p>
+    </div>
+     <p>You're borrowing a <%= @booking.tool.name %> from <%= @booking.tool.user.first_name %>.</p>
   <p>Your booking is from <%= @booking.start_date %> until <%= @booking.start_date %>.</p>
+  </div>
+</div>
+
