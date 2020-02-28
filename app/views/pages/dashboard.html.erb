@@ -17,7 +17,7 @@
     <p>"A short description rendered here"</p>
       <%= link_to '<i class="fas fa-ellipsis-h"></i>'.html_safe, my_tool_path(tool: tool)%>
       <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_tool_path(tool) %>
-      <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, tool_path(tool), method: :delete%>
+      <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, tool_path(tool), method: :delete, data: { confirm: "Are you sure?" }%>
     </div>
   </div>
   <% end %>
