@@ -1,6 +1,16 @@
+<div class="showpage p-4">
 Your Bookings for this tool.
 <!-- dynamically render a tool name. -->
 <!-- if else to protect against no bookings. -->
-<%= @my_tool.first.start_date unless @my_tool.empty? %>
+  <div>
+    <%= @tool.name  %>
+    <%= @tool.category  %>
+    <%= @tool.price  %>
+    <%= @tool.description  %>
+    <%= @tool.location  %>
+  </div>
+
+
+</div>
 
 

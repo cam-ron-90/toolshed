@@ -7,7 +7,8 @@ class BookingsController < ApplicationController
   end
 
   def my_tool
-    @my_tool = Booking.where(tool: params[:tool])
+    @tool = Tool.find(params[:tool])
+    @booking = @tool.bookings
   end
 
   def show
@@ -18,6 +19,7 @@ class BookingsController < ApplicationController
     @end_date = params[:booking_info][:end_date]
     @tool = Tool.find(params[:tool_id])
     @booking = Booking.new
+    @booking.save
   end
 
   def create
