@@ -27,14 +27,14 @@
 
 
     <div class="user_profile p-2">
-      <h3><%= link_to @tool.user.first_name %></h3>
+      <h3><%= @tool.user.first_name %></h3>
         <%= cl_image_tag "https://res.cloudinary.com/dsp3264/image/upload/v1582695374/user_nuk9hx.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
     </div>
   <br>
   <div class="show-grid">
     <div class="tool_desc">
       <p class="tool_desc_pg"><%= @tool.description %></p>
-      <p class="tool_loca">Location: <%= link_to @tool.location %></p>
+      <p class="tool_loca">Location: <%= @tool.location %></p>
     </div>
 
     <div class="show-grid-form">
